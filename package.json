@@ -5,8 +5,6 @@
     "cdk-hello-world": "bin/cdk-hello-world.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
   },

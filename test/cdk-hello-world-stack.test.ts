@@ -15,7 +15,7 @@ describe('Hello World site', () => {
                         Condition: {
                             IpAddress: {
                                 'aws:SourceIp': [
-                                    '114.23.249.114'
+                                    CdkHelloWorldStack.officeIp
                                 ]
                             }
                         }
