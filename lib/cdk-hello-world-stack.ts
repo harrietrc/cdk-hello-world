@@ -1,6 +1,6 @@
 import {StackProps, Stage, StageProps} from 'aws-cdk-lib'
 import * as cdk from 'aws-cdk-lib'
-import {CodePipeline, CodePipelineSource, ShellStep} from 'aws-cdk-lib/pipelines'
+import {CodePipeline, CodePipelineSource, ManualApprovalStep, ShellStep} from 'aws-cdk-lib/pipelines'
 import {SPADeploy} from 'cdk-spa-deploy'
 import { Construct } from 'constructs'
 
@@ -50,5 +50,6 @@ export class HelloWorldPipeline extends cdk.Stack {
     })
 
     const appStage = pipeline.addStage(new AppStage(this, 'HelloWorldApp', {}))
+    appStage.addPre(new ManualApprovalStep('Approval'))
   }
 }
